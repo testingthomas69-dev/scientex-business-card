@@ -1,520 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="description"
-        content="Scientex Berhad - Digital Business Card"
-    >
-
-    <meta
-        name="theme-color"
-        content="#07162B"
-    >
-
-    <title>Scientex | Digital Business Card</title>
-
-
-    <style>
-
-        /* =========================================================
-           GLOBAL
-        ========================================================= */
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-
-            min-height: 100vh;
-
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                Roboto,
-                Helvetica,
-                Arial,
-                sans-serif;
-
-            color: #ffffff;
-
-            background:
-                radial-gradient(
-                    circle at 15% 10%,
-                    rgba(40, 100, 190, 0.25),
-                    transparent 35%
-                ),
-
-                radial-gradient(
-                    circle at 90% 85%,
-                    rgba(25, 70, 145, 0.20),
-                    transparent 35%
-                ),
-
-                linear-gradient(
-                    135deg,
-                    #061426 0%,
-                    #0A2342 50%,
-                    #07182F 100%
-                );
-        }
-
-
-        /* =========================================================
-           PAGE CONTAINER
-        ========================================================= */
-
-        .page {
-            width: 100%;
-            min-height: 100vh;
-
-            padding:
-                45px 20px
-                55px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1050px;
-
-            margin: 0 auto;
-        }
-
-
-        /* =========================================================
-           HEADER
-        ========================================================= */
-
-        .header {
-            text-align: center;
-
-            margin-bottom: 42px;
-        }
-
-        .brand {
-            margin: 0;
-
-            font-size: 36px;
-            font-weight: 700;
-
-            letter-spacing: 5px;
-
-            color: #ffffff;
-        }
-
-        .brand-line {
-            width: 55px;
-            height: 3px;
-
-            margin:
-                15px auto
-                16px;
-
-            border-radius: 10px;
-
-            background: #ffffff;
-        }
-
-        .subtitle {
-            margin: 0;
-
-            font-size: 13px;
-            font-weight: 400;
-
-            letter-spacing: 2.5px;
-
-            text-transform: uppercase;
-
-            color:
-                rgba(255, 255, 255, 0.68);
-        }
-
-
-        /* =========================================================
-           CARD SECTION
-        ========================================================= */
-
-        .card-section {
-            width: 100%;
-
-            margin-bottom: 45px;
-        }
-
-
-        /* =========================================================
-           BUSINESS CARD FRAME
-        ========================================================= */
-
-        .business-card {
-            position: relative;
-
-            width: 100%;
-
-            padding: 8px;
-
-            background: #ffffff;
-
-            border-radius: 16px;
-
-            box-shadow:
-                0 25px 60px rgba(0, 0, 0, 0.40),
-                0 8px 20px rgba(0, 0, 0, 0.18);
-
-            overflow: hidden;
-        }
-
-
-        /* Elegant outer border */
-
-        .business-card::after {
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            border-radius: 16px;
-
-            border: 1px solid
-                rgba(255, 255, 255, 0.75);
-
-            pointer-events: none;
-        }
-
-
-        /* =========================================================
-           CARD IMAGE
-        ========================================================= */
-
-        .business-card img {
-            display: block;
-
-            width: 100%;
-
-            height: auto;
-
-            max-width: 100%;
-
-            border-radius: 9px;
-        }
-
-
-        /* =========================================================
-           FRONT / BACK DIVIDER
-        ========================================================= */
-
-        .divider {
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            gap: 18px;
-
-            margin:
-                32px auto
-                36px;
-
-            max-width: 700px;
-        }
-
-        .divider-line {
-            flex: 1;
-
-            height: 1px;
-
-            background:
-                rgba(255, 255, 255, 0.18);
-        }
-
-        .divider-dot {
-            width: 7px;
-            height: 7px;
-
-            border-radius: 50%;
-
-            background: #D4A72C;
-
-            box-shadow:
-                0 0 10px
-                rgba(212, 167, 44, 0.35);
-        }
-
-
-        /* =========================================================
-           FOOTER
-        ========================================================= */
-
-        .footer {
-            margin-top: 48px;
-
-            text-align: center;
-        }
-
-        .footer-company {
-            margin: 0;
-
-            font-size: 12px;
-            font-weight: 600;
-
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
-
-            color:
-                rgba(255, 255, 255, 0.72);
-        }
-
-        .footer-location {
-            margin-top: 8px;
-
-            font-size: 11px;
-
-            color:
-                rgba(255, 255, 255, 0.42);
-        }
-
-
-        /* =========================================================
-           MOBILE
-        ========================================================= */
-
-        @media (max-width: 700px) {
-
-            .page {
-                padding:
-                    28px 10px
-                    40px;
-            }
-
-            .container {
-                max-width: 100%;
-            }
-
-            .header {
-                margin-bottom: 28px;
-            }
-
-            .brand {
-                font-size: 25px;
-
-                letter-spacing: 4px;
-            }
-
-            .brand-line {
-                width: 45px;
-
-                height: 2px;
-
-                margin:
-                    12px auto
-                    13px;
-            }
-
-            .subtitle {
-                font-size: 10px;
-
-                letter-spacing: 2px;
-            }
-
-            .card-section {
-                margin-bottom: 30px;
-            }
-
-            .business-card {
-                padding: 5px;
-
-                border-radius: 10px;
-
-                box-shadow:
-                    0 12px 30px
-                    rgba(0, 0, 0, 0.30);
-            }
-
-            .business-card::after {
-                border-radius: 10px;
-            }
-
-            .business-card img {
-                border-radius: 6px;
-            }
-
-            .divider {
-                gap: 12px;
-
-                margin:
-                    22px auto
-                    26px;
-            }
-
-            .divider-dot {
-                width: 6px;
-                height: 6px;
-            }
-
-            .footer {
-                margin-top: 35px;
-            }
-
-            .footer-company {
-                font-size: 10px;
-            }
-
-            .footer-location {
-                font-size: 9px;
-            }
-        }
-
-
-        /* =========================================================
-           SMALL PHONES
-        ========================================================= */
-
-        @media (max-width: 380px) {
-
-            .page {
-                padding-left: 7px;
-                padding-right: 7px;
-            }
-
-            .brand {
-                font-size: 22px;
-            }
-
-            .subtitle {
-                font-size: 9px;
-            }
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Choo Seng Hong - Scientex Berhad - Digital Business Card">
+<meta name="theme-color" content="#07162B">
+<title>Choo Seng Hong | Scientex Digital Business Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#07162B; --blue:#2B4BA0; --gold:#E2B62C;
+  --text:#fff; --soft:rgba(255,255,255,.72); --line:rgba(255,255,255,.14);
+  --sans:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100vh;font-family:var(--sans);color:var(--text);background-color:var(--navy);
+  background:
+    radial-gradient(circle at 15% 8%,rgba(40,100,190,.28),transparent 38%),
+    radial-gradient(circle at 90% 90%,rgba(25,70,145,.22),transparent 38%),
+    linear-gradient(135deg,#061426,#0A2342 50%,#07182F);
+}
+.wrap{max-width:520px;margin:0 auto;padding:34px 16px 48px}
+
+.head{text-align:center;margin-bottom:26px}
+.head h1{margin:0;font-size:24px;font-weight:700;letter-spacing:.01em}
+.head .cn{margin:2px 0 0;font-size:18px;color:var(--soft);font-weight:500}
+.head .role{margin:10px 0 0;font-size:14px;color:var(--gold);font-weight:600;line-height:1.4}
+
+/* Flip card */
+.scene{perspective:1400px}
+.card{
+  position:relative;display:block;width:100%;aspect-ratio:1100/669;padding:0;border:0;background:none;
+  cursor:pointer;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.2,.7,.2,1);
+}
+.card.flipped{transform:rotateY(180deg)}
+.card:focus-visible{outline:2px solid var(--gold);outline-offset:6px;border-radius:14px}
+.face{
+  position:absolute;inset:0;background:#fff;padding:5px;border-radius:14px;overflow:hidden;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  box-shadow:0 26px 60px rgba(0,0,0,.45),0 8px 18px rgba(0,0,0,.2);
+}
+.face img{display:block;width:100%;height:100%;object-fit:cover;border-radius:9px}
+.face.back{transform:rotateY(180deg)}
+.tip{margin:14px 0 0;text-align:center;font-size:12px;color:rgba(255,255,255,.55)}
+
+/* Actions */
+.actions{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 14px;
+  border-radius:10px;text-decoration:none;font:600 14px var(--sans);color:#fff;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);transition:background .2s,border-color .2s;
+}
+.btn:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.35)}
+.btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.btn svg{width:18px;height:18px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.btn.primary{grid-column:1/-1;background:var(--gold);border-color:var(--gold);color:#1A1405}
+.btn.primary:hover{background:#EEC540}
+
+.foot{margin-top:36px;text-align:center;font-size:12px;color:rgba(255,255,255,.5);line-height:1.6}
+.foot strong{display:block;color:var(--soft);font-weight:600;font-size:13px}
+
+@media (prefers-reduced-motion:reduce){.card{transition:none}}
+</style>
 </head>
-
-
 <body>
+<main class="wrap">
+  <header class="head">
+    <h1>Choo Seng Hong</h1>
+    <p class="cn" lang="zh">朱成峰</p>
+    <p class="role">Executive Director / Chief Operating Officer</p>
+  </header>
 
+  <div class="scene">
+    <button class="card" id="card" type="button" aria-pressed="false" aria-label="Business card. Tap to flip between front and back.">
+      <div class="face front"><img src="business-card.jpg" alt="Scientex business card front: Choo Seng Hong, Executive Director and Chief Operating Officer"></div>
+      <div class="face back"><img src="business-card-back.jpg" alt="Scientex business card back with logo and QR code"></div>
+    </button>
+  </div>
+  <p class="tip">Tap the card to flip it</p>
 
-    <main class="page">
+  <div class="actions">
+    <a class="btn primary" id="vcf" href="#" download="Choo-Seng-Hong.vcf">
+      <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+      Save to contacts
+    </a>
+    <a class="btn" href="tel:+60355191325">
+      <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+      Call
+    </a>
+    <a class="btn" href="mailto:shchoo@scientex.com.my">
+      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+      Email
+    </a>
+    <a class="btn" href="https://www.scientex.com.my" rel="noopener">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>
+      Website
+    </a>
+    <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Scientex+Berhad+No.+9+Persiaran+Selangor+Seksyen+15+40200+Shah+Alam" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Directions
+    </a>
+  </div>
 
-        <div class="container">
+  <footer class="foot">
+    <strong>Scientex Berhad</strong>
+    Co. No. 196801000264 (7867-P)
+  </footer>
+</main>
 
-
-            <!-- =================================================
-                 HEADER
-            ================================================== -->
-
-            <header class="header">
-
-                <h1 class="brand">
-                    SCIENTEX
-                </h1>
-
-                <div class="brand-line"></div>
-
-                <p class="subtitle">
-                    Digital Business Card
-                </p>
-
-            </header>
-
-
-
-            <!-- =================================================
-                 FRONT OF CARD
-            ================================================== -->
-
-            <section class="card-section">
-
-                <div class="business-card">
-
-                    <img
-                        src="business-card.jpg?v=3"
-                        alt="Scientex Business Card - Front"
-                    >
-
-                </div>
-
-            </section>
-
-
-
-            <!-- =================================================
-                 ELEGANT DIVIDER
-            ================================================== -->
-
-            <div class="divider">
-
-                <div class="divider-line"></div>
-
-                <div class="divider-dot"></div>
-
-                <div class="divider-line"></div>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 BACK OF CARD
-            ================================================== -->
-
-            <section class="card-section">
-
-                <div class="business-card">
-
-                    <img
-                        src="business-card-back.jpg?v=3"
-                        alt="Scientex Business Card - Back"
-                    >
-
-                </div>
-
-            </section>
-
-
-
-            <!-- =================================================
-                 FOOTER
-            ================================================== -->
-
-            <footer class="footer">
-
-                <p class="footer-company">
-                    Scientex Berhad
-                </p>
-
-                <p class="footer-location">
-                    Manufacturing Division · Shah Alam, Selangor
-                </p>
-
-            </footer>
-
-
-        </div>
-
-    </main>
-
-
+<script>
+(function(){
+  var card=document.getElementById('card');
+  card.addEventListener('click',function(){
+    var on=card.classList.toggle('flipped');
+    card.setAttribute('aria-pressed',on);
+  });
+  var v=['BEGIN:VCARD','VERSION:3.0','FN:Choo Seng Hong','N:Choo;Seng Hong;;;',
+    'NICKNAME:朱成峰','ORG:Scientex Berhad','TITLE:Executive Director / Chief Operating Officer',
+    'TEL;TYPE=WORK,VOICE:+60355191325','TEL;TYPE=WORK,VOICE:+60355248888',
+    'TEL;TYPE=WORK,FAX:+60355191060','TEL;TYPE=WORK,FAX:+60355191884',
+    'EMAIL;TYPE=WORK:shchoo@scientex.com.my','URL:https://www.scientex.com.my',
+    'ADR;TYPE=WORK:;;No. 9, Persiaran Selangor, Seksyen 15;Shah Alam;Selangor Darul Ehsan;40200;Malaysia','END:VCARD'].join('\r\n');
+  document.getElementById('vcf').href='data:text/vcard;charset=utf-8,'+encodeURIComponent(v);
+})();
+</script>
 </body>
-
 </html>

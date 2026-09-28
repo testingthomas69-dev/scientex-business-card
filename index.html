@@ -2,95 +2,480 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
-    <!-- Makes the page display properly on phones -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>Scientex Business Card</title>
+    <meta
+        name="description"
+        content="Scientex Berhad - Executive Director Digital Business Card"
+    >
+
+    <meta
+        name="theme-color"
+        content="#071a33"
+    >
+
+    <title>Scientex | Executive Director</title>
+
 
     <style>
 
-        /* Page background */
-        body {
+        /* =========================================================
+           GLOBAL RESET
+        ========================================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
             margin: 0;
-            padding: 20px 10px;
+            padding: 0;
 
-            background: #eeeeee;
-
-            font-family: Arial, sans-serif;
-
-            display: flex;
-            justify-content: center;
+            scroll-behavior: smooth;
         }
 
-        /* Main container */
-        .card-container {
+
+        body {
+
+            margin: 0;
+            padding: 0;
+
+            min-height: 100vh;
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            color: #ffffff;
+
+            background:
+
+                radial-gradient(
+                    circle at 20% 10%,
+                    rgba(24, 82, 170, 0.30),
+                    transparent 35%
+                ),
+
+                radial-gradient(
+                    circle at 85% 80%,
+                    rgba(18, 61, 125, 0.25),
+                    transparent 35%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #061426 0%,
+                    #0a2342 45%,
+                    #07182d 100%
+                );
+
+        }
+
+
+        /* =========================================================
+           MAIN PAGE
+        ========================================================= */
+
+        .page {
+
             width: 100%;
-            max-width: 1000px;
+
+            min-height: 100vh;
+
+            padding:
+                50px 20px
+                60px;
+
         }
 
-        /* Section title */
-        .section-title {
+
+        .content {
+
+            width: 100%;
+
+            max-width: 1050px;
+
+            margin: 0 auto;
+
+        }
+
+
+        /* =========================================================
+           CORPORATE HEADER
+        ========================================================= */
+
+        .header {
+
             text-align: center;
 
-            margin-top: 15px;
-            margin-bottom: 10px;
+            margin-bottom: 45px;
 
-            font-size: 16px;
-            font-weight: bold;
-
-            color: #333333;
         }
 
-        /* Business card image */
+
+        .brand {
+
+            font-size: 28px;
+
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            margin: 0 0 12px;
+
+        }
+
+
+        .brand-line {
+
+            width: 55px;
+
+            height: 3px;
+
+            margin: 0 auto 18px;
+
+            background: #ffffff;
+
+            border-radius: 10px;
+
+            opacity: 0.9;
+
+        }
+
+
+        .subtitle {
+
+            margin: 0;
+
+            font-size: 14px;
+
+            font-weight: 400;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            color: rgba(255, 255, 255, 0.72);
+
+        }
+
+
+        /* =========================================================
+           BUSINESS CARD AREA
+        ========================================================= */
+
+        .cards {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 35px;
+
+        }
+
+
+        /* =========================================================
+           CARD LABEL
+        ========================================================= */
+
+        .card-label {
+
+            margin-bottom: 12px;
+
+            padding-left: 4px;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            color: rgba(255, 255, 255, 0.60);
+
+        }
+
+
+        /* =========================================================
+           BUSINESS CARD FRAME
+        ========================================================= */
+
         .business-card {
+
+            position: relative;
+
+            overflow: hidden;
+
             width: 100%;
-            height: auto;
+
+            background: #ffffff;
+
+            border-radius: 14px;
+
+            padding: 8px;
+
+            box-shadow:
+
+                0 25px 60px rgba(0, 0, 0, 0.38),
+
+                0 8px 20px rgba(0, 0, 0, 0.20);
+
+        }
+
+
+        /* Premium subtle border */
+
+        .business-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            border-radius: 14px;
+
+            border: 1px solid
+                rgba(255, 255, 255, 0.65);
+
+            pointer-events: none;
+
+        }
+
+
+        /* =========================================================
+           CARD IMAGE
+        ========================================================= */
+
+        .business-card img {
 
             display: block;
 
-            margin-bottom: 30px;
+            width: 100%;
 
-            background: white;
+            height: auto;
+
+            max-width: 100%;
 
             border-radius: 8px;
 
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
 
-        /* Small text at bottom */
+
+        /* =========================================================
+           DIVIDER
+        ========================================================= */
+
+        .divider {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            margin: 5px 0;
+
+        }
+
+
+        .divider-line {
+
+            flex: 1;
+
+            height: 1px;
+
+            background:
+                rgba(255, 255, 255, 0.16);
+
+        }
+
+
+        .divider-text {
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            color:
+                rgba(255, 255, 255, 0.45);
+
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
         .footer {
+
+            margin-top: 55px;
+
             text-align: center;
 
-            font-size: 13px;
-
-            color: #666666;
-
-            margin-top: 20px;
-            margin-bottom: 20px;
         }
 
-        /* Mobile adjustments */
+
+        .footer-company {
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            color:
+                rgba(255, 255, 255, 0.70);
+
+        }
+
+
+        .footer-location {
+
+            margin-top: 8px;
+
+            font-size: 11px;
+
+            color:
+                rgba(255, 255, 255, 0.40);
+
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
         @media (max-width: 600px) {
 
-            body {
-                padding: 10px 5px;
+            .page {
+
+                padding:
+                    30px 12px
+                    40px;
+
             }
 
-            .section-title {
-                font-size: 14px;
+
+            .header {
+
+                margin-bottom: 30px;
+
             }
+
+
+            .brand {
+
+                font-size: 22px;
+
+                letter-spacing: 3px;
+
+            }
+
+
+            .subtitle {
+
+                font-size: 11px;
+
+                letter-spacing: 1.5px;
+
+            }
+
+
+            .cards {
+
+                gap: 25px;
+
+            }
+
 
             .business-card {
-                border-radius: 5px;
 
-                margin-bottom: 20px;
+                padding: 5px;
+
+                border-radius: 10px;
+
             }
+
+
+            .business-card::before {
+
+                border-radius: 10px;
+
+            }
+
+
+            .business-card img {
+
+                border-radius: 6px;
+
+            }
+
+
+            .card-label {
+
+                font-size: 10px;
+
+                margin-bottom: 8px;
+
+            }
+
+
+            .divider {
+
+                margin: 0;
+
+            }
+
 
             .footer {
-                font-size: 11px;
+
+                margin-top: 40px;
+
             }
+
+        }
+
+
+        /* =========================================================
+           VERY SMALL PHONES
+        ========================================================= */
+
+        @media (max-width: 380px) {
+
+            .page {
+
+                padding-left: 8px;
+
+                padding-right: 8px;
+
+            }
+
+
+            .brand {
+
+                font-size: 20px;
+
+            }
+
         }
 
     </style>
@@ -100,47 +485,119 @@
 
 <body>
 
-    <div class="card-container">
 
-        <!-- ===================================== -->
-        <!-- FRONT OF BUSINESS CARD -->
-        <!-- ===================================== -->
+    <main class="page">
 
-        <div class="section-title">
-            FRONT
+
+        <div class="content">
+
+
+            <!-- =================================================
+                 HEADER
+            ================================================== -->
+
+            <header class="header">
+
+                <h1 class="brand">
+                    SCIENTEX
+                </h1>
+
+                <div class="brand-line"></div>
+
+                <p class="subtitle">
+                    Executive Director
+                </p>
+
+            </header>
+
+
+            <!-- =================================================
+                 BUSINESS CARDS
+            ================================================== -->
+
+            <section class="cards">
+
+
+                <!-- FRONT -->
+
+                <div>
+
+                    <div class="card-label">
+                        Business Card · Front
+                    </div>
+
+                    <div class="business-card">
+
+                        <img
+                            src="business-card.jpg?v=2"
+                            alt="Scientex Executive Director Business Card Front"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- DIVIDER -->
+
+                <div class="divider">
+
+                    <div class="divider-line"></div>
+
+                    <div class="divider-text">
+                        Reverse
+                    </div>
+
+                    <div class="divider-line"></div>
+
+                </div>
+
+
+                <!-- BACK -->
+
+                <div>
+
+                    <div class="card-label">
+                        Business Card · Back
+                    </div>
+
+                    <div class="business-card">
+
+                        <img
+                            src="business-card-back.jpg?v=2"
+                            alt="Scientex Executive Director Business Card Back"
+                        >
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 FOOTER
+            ================================================== -->
+
+            <footer class="footer">
+
+                <div class="footer-company">
+                    Scientex Berhad
+                </div>
+
+                <div class="footer-location">
+                    Manufacturing Division · Shah Alam, Selangor
+                </div>
+
+            </footer>
+
+
         </div>
 
-        <img
-            src="business-card.jpg"
-            alt="Scientex Business Card - Front"
-            class="business-card"
-        >
 
+    </main>
 
-        <!-- ===================================== -->
-        <!-- BACK OF BUSINESS CARD -->
-        <!-- ===================================== -->
-
-        <div class="section-title">
-            BACK
-        </div>
-
-        <img
-            src="business-card-back.jpg"
-            alt="Scientex Business Card - Back"
-            class="business-card"
-        >
-
-
-        <!-- ===================================== -->
-        <!-- FOOTER -->
-        <!-- ===================================== -->
-
-        <div class="footer">
-            SCIENTEX BERHAD
-        </div>
-
-    </div>
 
 </body>
 

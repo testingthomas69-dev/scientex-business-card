@@ -2,49 +2,143 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <!-- Makes the page display properly on phones -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Scientex Business Card</title>
 
     <style>
 
-        html, body {
-            margin: 0;
-            padding: 0;
-            background: #eeeeee;
-        }
-
+        /* Page background */
         body {
+            margin: 0;
+            padding: 20px 10px;
+
+            background: #eeeeee;
+
+            font-family: Arial, sans-serif;
+
             display: flex;
             justify-content: center;
-            align-items: flex-start;
         }
 
-        .container {
+        /* Main container */
+        .card-container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1000px;
         }
 
-        img {
-            display: block;
+        /* Section title */
+        .section-title {
+            text-align: center;
+
+            margin-top: 15px;
+            margin-bottom: 10px;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            color: #333333;
+        }
+
+        /* Business card image */
+        .business-card {
             width: 100%;
             height: auto;
+
+            display: block;
+
+            margin-bottom: 30px;
+
+            background: white;
+
+            border-radius: 8px;
+
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Small text at bottom */
+        .footer {
+            text-align: center;
+
+            font-size: 13px;
+
+            color: #666666;
+
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+
+            body {
+                padding: 10px 5px;
+            }
+
+            .section-title {
+                font-size: 14px;
+            }
+
+            .business-card {
+                border-radius: 5px;
+
+                margin-bottom: 20px;
+            }
+
+            .footer {
+                font-size: 11px;
+            }
         }
 
     </style>
 
 </head>
 
+
 <body>
 
-    <div class="container">
+    <div class="card-container">
 
-        <img src="business-card.jpg"
-             alt="Scientex Business Card">
+        <!-- ===================================== -->
+        <!-- FRONT OF BUSINESS CARD -->
+        <!-- ===================================== -->
+
+        <div class="section-title">
+            FRONT
+        </div>
+
+        <img
+            src="business-card.jpg"
+            alt="Scientex Business Card - Front"
+            class="business-card"
+        >
+
+
+        <!-- ===================================== -->
+        <!-- BACK OF BUSINESS CARD -->
+        <!-- ===================================== -->
+
+        <div class="section-title">
+            BACK
+        </div>
+
+        <img
+            src="business-card-back.jpg"
+            alt="Scientex Business Card - Back"
+            class="business-card"
+        >
+
+
+        <!-- ===================================== -->
+        <!-- FOOTER -->
+        <!-- ===================================== -->
+
+        <div class="footer">
+            SCIENTEX BERHAD
+        </div>
 
     </div>
 
